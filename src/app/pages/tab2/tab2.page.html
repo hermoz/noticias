@@ -1,0 +1,35 @@
+<ion-header no border [translucent]="true">
+    <ion-toolbar color="dark">
+        <ion-title>
+            Categories
+        </ion-title>
+    </ion-toolbar>
+
+    <!-- En este apartado donde seleccionamos por categorías usamos el evento de ionic aplicado 
+    a segmentos (ionChange) para detectar el cambio de las categorías y asociarlos a las noticias correspondientes-->
+    <ion-segment scrollable mode="md" color="primary" (ionChange)="cambioCategoria($event)">
+
+        <ion-segment-button mode="md" *ngFor="let categoria of categorias" [value]="categoria">
+            <ion-label text-capitalize>{{categoria}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+
+<ion-content>
+
+    <app-noticias [noticias]=" noticias "></app-noticias>
+
+</ion-content>
+
+
+
+
+<!--
+
+
+
+
+
+
+-->

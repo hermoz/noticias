@@ -1,0 +1,22 @@
+<ion-card>
+
+    <!-- Capturamos el evento para abrir la noticia en el navegador
+        al hacer click sobre el título y la noticia -->
+    <ion-img *ngIf="noticia.urlToImage" [src]="noticia.urlToImage" (click)="abrirNoticia()"></ion-img>
+    <ion-card-header>
+        <ion-card-subtitle> {{noticia.source.name}}</ion-card-subtitle>
+
+        <!-- Botón para el despliegue de opciones con el método implementado desarrollado
+        en el componente  -->
+        <div class="noticia-more">
+            <ion-button color="dark" fill=" clear " (click)="launchMenu() ">
+                <ion-icon color="primary" name="paper-plane" color="bright"></ion-icon>
+            </ion-button>
+        </div>
+        <!-- Abrir noticia haciendo click sobre título con el método implementado en nuestro component-->
+        <ion-card-title (click)="abrirNoticia() ">{{noticia.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        {{noticia.description}}
+    </ion-card-content>
+</ion-card>
